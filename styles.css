@@ -86,6 +86,21 @@ h2 {
    justify-content: right;
 }
 
+@media (min-width: 800px) {
+    .cardContainer {
+        max-width: 1000px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 350px 350px 350px;
+        gap: 2em;
+    }
+
+    .superCard, .teamCard, .karmaCard, .calcCard {
+        margin-bottom: 0;
+    }
+
+}
+
 footer {
   margin-top: 600px;
 }
