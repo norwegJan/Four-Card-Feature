@@ -26,11 +26,6 @@ header {
   margin-top: 70px;
 }
 
-.cardContainer {
-    display: flex;
-    flex-direction: column;
-}
-
 .intro,
 .cardContainer {
   margin: auto;
@@ -39,6 +34,7 @@ header {
 
 .intro {
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 h1 {
@@ -47,17 +43,37 @@ h1 {
   margin-bottom: 1.6rem;
 }
 
+p {
+  color: hsl(212, 6%, 44%);
+}
+
+.hlFirst {
+  font-weight: 200;
+  color: hsl(212, 6%, 44%);
+}
+
+.hlSecond {
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+}
+
 h2 {
   font-size: 1.3rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0;
+  color: hsl(234, 12%, 34%);
+  font-weight: 600;
 }
+
 
 .superCard, .teamCard, .karmaCard, .calcCard {
     background-color: white;
     border-radius: 10px;
     margin-bottom: 2rem;
     padding: 2rem;
-    box-shadow: 3px 3px 20px 10px #E0E0E0;
+    padding-top: 1.2rem;
+    box-shadow: 0.5px 0.5px 25px 2px #BFCCD9;
+    transition: transform .3s;
 }
 
 .superCard {
@@ -86,13 +102,74 @@ h2 {
    justify-content: right;
 }
 
-@media (min-width: 800px) {
+.superCard:hover, .teamCard:hover, .karmaCard:hover, .calcCard:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 1000px) {
+    .intro {
+      max-width: 700px;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+    }
+
     .cardContainer {
-        max-width: 1000px;
-        margin: auto;
+        margin: 0 auto;
         display: grid;
-        grid-template-columns: 350px 350px 350px;
-        gap: 2em;
+        grid-template-columns: repeat(3, minmax(260px, 1 fr));
+        grid-template-rows: 125px 125px 125px 125px;
+        grid-gap: 2em;
+        max-width: 1100px;
+        padding-inline: 1rem;
+        box-sizing: border-box;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    .introPar {
+      font-size: 1.2rem;
+    }
+
+    .superCard {
+      grid-column: 1;
+      grid-row: 2 / span 2;
+    }
+
+    .teamCard {
+      grid-column: 2; 
+      grid-row: 1 / span 2;
+    }
+
+    .karmaCard {
+      grid-column: 2;
+      grid-row: 3 / span 2;
+    }
+
+    .calcCard {
+      grid-column: 3;
+      grid-row: 2 / span 2;
+    }
+
+    .cardImg {
+      display: flex;
+      justify-content: flex-end;
+      align-items:flex-end;
+    }
+
+    .cardContainer p {
+      margin-bottom: 4.5rem;
+    }
+
+    .teamCard p {
+      margin-bottom: 3.5rem;
+    }
+
+    img {
+      height: clamp(48px, 6vw, 60px);
     }
 
     .superCard, .teamCard, .karmaCard, .calcCard {
